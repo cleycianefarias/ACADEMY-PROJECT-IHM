@@ -14,8 +14,10 @@
                     formuser.nome.focus();
                     return false;
                 }
+                
                 if(nome == "admin"){
                   window.location.replace("admin.html");
+                  alert('Voce foi autenticado como ADMINISTRADOR');
                   return true;
                 }
 

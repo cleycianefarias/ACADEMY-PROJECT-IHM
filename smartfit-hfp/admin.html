@@ -33,32 +33,31 @@
 </script>
 
 <script type="text/javascript">
-            function validar(){
-                var nome = formuser.nome.value;
-                var cpf = formuser.cpf.value;
-                var nascimento = formuser.nascimento.value;
 
-                var celular = formuser.celular.value;
-                var bairro = formuser.bairro.value;
-                var rua = formuser.rua.value;
+  function validar(){
+   var nome = formuser.nome.value;
+   var cpf = formuser.cpf.value;
+   var nascimento = formuser.nascimento.value;
+   var celular = formuser.celular.value;
+   var bairro = formuser.bairro.value;
+   var rua = formuser.rua.value;
+   var numero = formuser.numero.value;
+   var cep = formuser.cep.value;
+   var email = formuser.email.value;
+   
+   if(nome == "" || cpf == "" || nascimento == "" ||
+     celular == "" || bairro == "" || rua == "" ||
+     numero == "" || cep == "" || email == "" ){
+    alert('Observe os campos obrigatórios.');
+  formuser.matricula.focus();
+  return false;
+}else{
+  alert('Matricula Realizada com Sucesso!');
+  return true;
+}
 
-                var numero = formuser.numero.value;
-                var cep = formuser.cep.value;
-                var email = formuser.email.value;
-                
-                if(nome == "" || cpf == "" || nascimento == "" ||
-                   celular == "" || bairro == "" || rua == "" ||
-                   numero == "" || cep == "" || email == "" ){
-                  alert('Observe os campos obrigatórios.');
-                  formuser.matricula.focus();
-                  return false;
-                }else{
-                  alert('Matricula Realizada com Sucesso!');
-                  return true;
-                }
-
-            }
-        </script>
+}
+</script>
 
 
 <script language="JavaScript">
@@ -89,7 +88,7 @@
 </script>
 <title>GERENTE</title>
 </head>
-<body onload="">
+<body onmousedown="return bemvindo()">
 
   <!--BARRA SUPERIOR-->
   <div>
@@ -265,72 +264,72 @@
             <label style="color : red;">*</label>
           </div>
           <div class="col-md-7">
-             <input type="text" id="defaultForm-email" class="form-control validate" required name="bairro">
-          </div>
-          <div class="col-md-2">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Numero</label>
-            <label style="color : red;">*</label>
-          </div>
-          <div class="col-md-2">
-            <input type="number" id="defaultForm-email" class="form-control validate" required name="numero">
-          </div>
-        </div>
-        <br>
-        <div>
-          <i class="fas fa-lock prefix grey-text"></i>
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">CEP</label>
+           <input type="text" id="defaultForm-email" class="form-control validate" required name="rua">
+         </div>
+         <div class="col-md-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Numero</label>
           <label style="color : red;">*</label>
-          <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" placeholder="00000-000" required name="cep"> 
         </div>
-
-        <div>
-          <i class="fas fa-lock prefix grey-text"></i>
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Email</label>
-          <label style="color : red;">*</label>
-          <input type="email" id="defaultForm-pass" class="form-control validate" placeholder="seuemail@provedor.com" name="email">
+        <div class="col-md-2">
+          <input type="number" id="defaultForm-email" class="form-control validate" required name="numero">
         </div>
-
-        <br>
-
-        <div class="row">
-          <div class="col-md-6">
-            <label>Modalidade 1</label>
-            <select name="cars">
-              <option value="volvo">Musculação</option>
-              <option value="saab">Natação</option>
-              <option value="fiat">Aeróbica</option>
-              ]<option value="fiat">Funcional</option>
-            </select>  
-          </div>
-          <div class="col-md-6">
-            <label>Modalidade 2</label>
-            <select name="cars">
-              <option value="volvo">Taekwondo</option>
-              <option value="saab">Jiu-Jitsu</option>
-              <option value="fiat">Boxe Chinês</option>
-              <option value="fiat">Muay Thay</option>
-            </select>   
-          </div>
-        </div>
-
-        <div class="row">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <label data-error="wrong" data-success="right" for="defaultForm-pass" class="col-md-3">Melhor Dia Pagamento</label>
-          <select name="cars" class="col-md-9">
-            <option value="volvo">Dia 5</option>
-            <option value="saab">Dia 10</option>
-            <option value="fiat">Dia 15</option>
-          </select> 
-        </div>
-
-
       </div>
-      <div class="modal-footer d-flex justify-content-center primary">
-        <button class="btn btn-default btn-success" type="submit" value="Logar" onclick="return validar()">Confirmar</button>
-        <button class="btn btn-default btn-danger" data-dismiss="modal">Cancelar</button>
+      <br>
+      <div>
+        <i class="fas fa-lock prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">CEP</label>
+        <label style="color : red;">*</label>
+        <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" placeholder="00000-000" required name="cep"> 
       </div>
+
+      <div>
+        <i class="fas fa-lock prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">Email</label>
+        <label style="color : red;">*</label>
+        <input type="email" id="defaultForm-pass" class="form-control validate" placeholder="seuemail@provedor.com" name="email">
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Modalidade 1</label>
+          <select name="cars">
+            <option value="volvo">Musculação</option>
+            <option value="saab">Natação</option>
+            <option value="fiat">Aeróbica</option>
+            ]<option value="fiat">Funcional</option>
+          </select>  
+        </div>
+        <div class="col-md-6">
+          <label>Modalidade 2</label>
+          <select name="cars">
+            <option value="volvo">Taekwondo</option>
+            <option value="saab">Jiu-Jitsu</option>
+            <option value="fiat">Boxe Chinês</option>
+            <option value="fiat">Muay Thay</option>
+          </select>   
+        </div>
+      </div>
+
+      <div class="row">
+        <i class="fas fa-lock prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="defaultForm-pass" class="col-md-3">Melhor Dia Pagamento</label>
+        <select name="cars" class="col-md-9">
+          <option value="volvo">Dia 5</option>
+          <option value="saab">Dia 10</option>
+          <option value="fiat">Dia 15</option>
+        </select> 
+      </div>
+
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center primary">
+      <button class="btn btn-default btn-success" type="submit" value="Logar" onclick="return validar()">Confirmar</button>
+      <button class="btn btn-default btn-danger" data-dismiss="modal">Cancelar</button>
     </div>
   </div>
+</div>
 </form>
 
 <!-- CONFIRMAÇÃO DE OPERAÇÃO-->
