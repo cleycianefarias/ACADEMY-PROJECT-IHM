@@ -61,7 +61,7 @@
          <!--CADASTRO USUÁRIO-->
          <td>
           <div style="margin-left: 270%;">
-            <a class="button" href="admin-alu-cad.html">
+            <a data-target="#myModal" data-toggle="modal" href="#myModal">
              <span><img src="https://img.icons8.com/ios/100/000000/add-user-male-filled.png"></span>
            </a>
          </div>
@@ -93,12 +93,61 @@
  </td>  
 
 
+ <!-- MODAL -->
+ <div id="myModal" class="modal" style="padding-top:4%; padding-right: 10%; padding-left: 10%;">
+  <!-- CONTEUDO MODAL -->
+  <div class="modal-content">
+    <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">ADIÇAO DE ALUNO</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--CORPO MODAL-->
+      <div class="modal-body mx-3">
+
+        <!--CAMPOS-->
+        <div class="row">
+          <div class="col-md-3">
+            <input type="file" id="defaultForm-email" class="form-control validate" style="height: 150px;">
+          </div>
+          <div class="col-md-2">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Matricula</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" id="matricula" class="form-control validate">
+          </div>
+        </div>
+       
+        <div>
+          <i class="fas fa-lock prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Nome</label>
+          <input type="text" id="defaultForm-pass" class="form-control validate">
+        </div>
+
+         <div>
+          <i class="fas fa-lock prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">CPF</label>
+          <input type="text" id="defaultForm-pass" class="form-control validate">
+        </div>
+
+         <div>
+          <i class="fas fa-lock prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Data de Nascimento</label>
+          <input type="date" id="defaultForm-pass" class="form-control validate">
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center primary">
+        <button class="btn btn-default btn-success">Confirmar</button>
+        <button class="btn btn-default btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+</div>
+</div>
 </tr>
 </table>
 </div>
 </div>
-
-<!-- -->
 
 <!-- JavaScript (Opcional) -->
 <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
