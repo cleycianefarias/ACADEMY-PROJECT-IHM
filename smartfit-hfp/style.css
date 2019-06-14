@@ -236,3 +236,7 @@ input[type=file] {
     display: none;
     float: left;
 }
+
+.smart-body{
+  background-color: #D7DF01;
+}
