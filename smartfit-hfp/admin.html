@@ -44,10 +44,11 @@
    var numero = formuser.numero.value;
    var cep = formuser.cep.value;
    var email = formuser.email.value;
+   var foto = formuser.foto.value;
 
    if(nome == "" || cpf == "" || nascimento == "" ||
      celular == "" || bairro == "" || rua == "" ||
-     numero == "" || cep == "" || email == "" ){
+     numero == "" || cep == "" || email == ""|| foto == "" ){
     alert('Observe os campos obrigatórios.');
   formuser.matricula.focus();
   return false;
@@ -175,7 +176,7 @@
 
  <form method="post" action="" name="formuser">
    <!-- MODAL -->
-   <div id="myModal" class="modal" style="padding-top:4%; padding-right: 10%; padding-left: 10%;">
+   <div id="myModal" class="modal" style="padding-top:4%; padding-right: 7%; padding-left: 5%;">
     <!-- CONTEUDO MODAL -->
     <div class="modal-content">
       <div class="modal-header text-center">
