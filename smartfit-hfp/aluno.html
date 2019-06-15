@@ -12,259 +12,185 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
-<title>ALUNO</title>
+  <title>ALUNO</title>
 </head>
 <body style=" 
-    background-image: url('fundo-admin.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+background-image: url('fundo-admin.jpg');
+background-repeat: no-repeat;
+background-size: cover;
 ">
 
-  <!--BARRA SUPERIOR-->
-  <div>
-    <div style="float: right;">
-      <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-    </div>
-    <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <a class="dropdown-item" data-target="#modalExemplo" data-toggle="modal" href="#modalExemplo" style="text-align: right">Sair</a>
-        </div>
+<!--BARRA SUPERIOR-->
+<div>
+  <div style="float: right;">
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <a class="dropdown-item" data-target="#modalExemplo" data-toggle="modal" href="#modalExemplo" style="text-align: right">Sair</a>
       </div>
     </div>
   </div>
+</div>
 
-  <!--BOAS VINDAS-->
-  <div>
-    <h1 align="center" style="padding-top: 1%;">BEM VINDO A SMARTFIT ACADEMIA</h1>  
-  </div>
+<!--BOAS VINDAS-->
+<div>
+  <h1 align="center" style="padding-top: 1%;">BEM VINDO A SMARTFIT ACADEMIA</h1>  
+</div>
 
 
-  <div>
-    <div style="margin-top: 15%;">
-      <table>
-        <tr>
-          <td>
-            <!--CADASTRO EQUIPAMENTO-->
-            <div  style="margin-left: 135%;">
-              <a class="button" href="#">
-               <span><img src="vertreino.png"></span>
-             </a>
-           </div>
-         </td>
+<div>
+  <div style="margin-top: 15%;">
+    <table>
+      <tr>
+        <td>
+          <!--CADASTRO EQUIPAMENTO-->
+          <div  style="margin-left: 135%;">
+            <a class="button" href="#">
+             <span><img src="alterardados.png"></span>
+           </a>
+         </div>
+       </td>
 
        <!--CADASTRO PACOTE-->
        <td>
         <div style="margin-left: 480%;">
-         <a class="button" href="#">
-           <span><img src="alterardados.png"></span>
+         <a data-target="#myModal" data-toggle="modal" href="#myModal">
+           <span><img src="vertreino.png"></span>
          </a>
        </div>
      </td>  
 
-   <!--CADASTRO PAGAMENTO-->
-   <td>
-    <div style="margin-left: 901%;">
-      <a class="button" href="#">
-       <span><img src="novopacote.png"></span>
-     </a>
-   </div>
- </td>  
+     <!--CADASTRO PAGAMENTO-->
+     <td>
+      <div style="margin-left: 901%;">
+        <a class="button" href="#">
+         <span><img src="novopacote.png"></span>
+       </a>
+     </div>
+   </td>  
 
+  <!-- CONFIRMAÇÃO DE OPERAÇÃO-->
 
- <form method="post" action="" name="formuser">
-   <!-- MODAL -->
-   <div id="myModal" class="modal" style="padding-top:4%; padding-right: 10%; padding-left: 10%;">
-    <!-- CONTEUDO MODAL -->
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">ADIÇAO DE ALUNO</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!--CORPO MODAL-->
-      <div class="modal-body mx-3">
-
-        <!--CAMPOS-->
-        <div class="row">
-          <div class="col-md-3">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Foto do Aluno</label>
-            <label style="color : red;">*</label>
-            <img src="" height="200">
-            <input type="file" onchange="previewFile()" class="form-control validate" style="height: 40px; width: 160px;" required name="foto">          
-          </div>
-          <div class="col-md-2">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Matricula</label>
-            <br>
-            <br>
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Nome</label>
-            <label style="color : red;">*</label>
-            <br>
-            <br>
-            <label data-error="wrong" data-success="right" for="defaultForm-email">CPF</label>
-            <label style="color : red;">*</label>
-          </div>
-          <div class="col-md-7">
-            <input type="text" id="matricula" class="form-control validate" value="0">
-            <br>
-            <input type="text" id="nome" class="form-control validate" placeholder="José da Silva Araujo"  required name="nome">
-            <br>
-            <input type="text" name="cpf" onkeypress="mascara(this, '###.###.###-##')" placeholder="000.000.000-00" maxlength="14"  required name="cpf">
-          </div>
+  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Finalizar Seção?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <br>
+        <div class="modal-body">
 
-        <div class=row>
-          <div class="col-md-3">
-            <label data-error="wrong" data-success="right" for="defaultForm-pass">Data de Nascimento</label>
-            <label style="color : red;">*</label>
-          </div>
-          <div class="col-md-9">
-            <input type="date" id="defaultForm-pass" class="form-control validate"  required name="nascimento">
-          </div>
         </div>
-
-        <div>
-          <i class="fas fa-lock prefix grey-text"></i>
-          <label> Sexo</label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio" checked>Feminino
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Masculino
-          </label>    
+        <div class="modal-footer" style="align-self: center;">
+          <button type="button" data-dismiss="modal" class="button btn-success">Ficar</button>
+          <a href="index.html"><button class="btn btn-danger"  href="index.html">Sair</button></a>
         </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Celular</label>
-            <label style="color : red;">*</label>
-            <input type="text" name="celular" onkeypress="mascara(this, '## # ####-####')" placeholder="00 0 0000-0000" maxlength="16"  required name="celular">
-          </div>
-          <div class="col-md-6">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Telefone</label>
-            <input type="text" name="telefone" onkeypress="mascara(this, '## ####-####')" maxlength="12" placeholder="00 0000-0000">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-3">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="defaultForm-pass">Bairro</label>
-            <label style="color : red;">*</label>
-          </div>
-          <div class="col-md-9">
-            <input type="text" id="defaultForm-pass" class="form-control validate" required name="bairro">
-          </div>
-        </div>
-
-        <br>
-        
-        <div class="row">
-          <div class="col-md-1">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">Rua</label>
-            <label style="color : red;">*</label>
-          </div>
-          <div class="col-md-7">
-           <input type="text" id="defaultForm-email" class="form-control validate" required name="rua">
-         </div>
-         <div class="col-md-2">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Numero</label>
-          <label style="color : red;">*</label>
-        </div>
-        <div class="col-md-2">
-          <input type="number" id="defaultForm-email" class="form-control validate" required name="numero">
-        </div>
-      </div>
-      <br>
-      <div>
-        <i class="fas fa-lock prefix grey-text"></i>
-        <label data-error="wrong" data-success="right" for="defaultForm-pass">CEP</label>
-        <label style="color : red;">*</label>
-        <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" placeholder="00000-000" required name="cep"> 
-      </div>
-
-      <div>
-        <i class="fas fa-lock prefix grey-text"></i>
-        <label data-error="wrong" data-success="right" for="defaultForm-pass">Email</label>
-        <label style="color : red;">*</label>
-        <input type="email" id="defaultForm-pass" class="form-control validate" placeholder="seuemail@provedor.com" name="email">
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="col-md-6">
-          <label>Modalidade 1</label>
-          <select name="cars">
-            <option value="volvo">Musculação</option>
-            <option value="saab">Natação</option>
-            <option value="fiat">Aeróbica</option>
-            ]<option value="fiat">Funcional</option>
-          </select>  
-        </div>
-        <div class="col-md-6">
-          <label>Modalidade 2</label>
-          <select name="cars">
-            <option value="volvo">Taekwondo</option>
-            <option value="saab">Jiu-Jitsu</option>
-            <option value="fiat">Boxe Chinês</option>
-            <option value="fiat">Muay Thay</option>
-          </select>   
-        </div>
-      </div>
-
-      <div class="row">
-        <i class="fas fa-lock prefix grey-text"></i>
-        <label data-error="wrong" data-success="right" for="defaultForm-pass" class="col-md-3">Melhor Dia Pagamento</label>
-        <select name="cars" class="col-md-9">
-          <option value="volvo">Dia 5</option>
-          <option value="saab">Dia 10</option>
-          <option value="fiat">Dia 15</option>
-        </select> 
-      </div>
-
-
-    </div>
-    <div class="modal-footer d-flex justify-content-center primary">
-      <button class="btn btn-default btn-success" type="submit" value="Logar" onclick="return validar()">Confirmar</button>
-      <button class="btn btn-default btn-danger" data-dismiss="modal">Cancelar</button>
-    </div>
-  </div>
-</div>
-</form>
-
-<!-- CONFIRMAÇÃO DE OPERAÇÃO-->
-
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Finalizar Seção?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer" style="align-self: center;">
-        <button type="button" data-dismiss="modal" class="button btn-success">Ficar</button>
-        <a href="index.html"><button class="btn btn-danger"  href="index.html">Sair</button></a>
       </div>
     </div>
   </div>
-</div>
 
 </tr>
 </table>
 </div>
 </div>
+
+
+<div class="modal fade" id="myModal">
+<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+      <h4 class="text-center">Visualizar Treino</h4>
+
+
+          <div class="row">
+
+            <div class="col-md-4">
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Nome</label>
+              <br>
+              <br>
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Matricula</label>
+
+              <br>
+              <br>
+              <br>
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Modalidade</label>
+
+              <br>
+              <br>
+              <label data-error="wrong" data-success="right" for="defaultForm-email">Professor Responsável</label>
+              <br>
+
+            </div>
+            <div class="col-md-7">
+              <input type="text" name="nome" class="form-control validate" value="José da Silva Araujo" disabled="">
+              <br>
+              <input type="text" name="matricula" class="form-control validate" value="0" disabled="">
+              <br>
+              <input type="text" name="modalidade" class="form-control validate" value="Natação" disabled="">
+              <br>
+              <input <input type="text" name="professor" class="form-control validate" value="Raul Vitor Lopes da Costa" disabled="">
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label>Aulas</label>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-1" style="align-self: center;"> 
+              <input type="text" name="aulas" value="5/10" style="align-content: center; size: 5px;" disabled="">
+            </div>
+          </div>
+        </div>
+
+          <table class="table table-striped" id="tblGrid">
+            <thead id="tblHead">
+              <tr>
+                <th style="padding-left: 50px;">Quantidade</th>
+                <th>Exercício</th>
+                <th>Série</th>
+                <th class="text-right">Repetições</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="text-center">1</td>
+                <td>Supino</td>
+                <td class="text-center">3</td>
+                <td class="text-center">15</td>
+              </tr>
+              <tr><td class="text-center">2</td>
+                <td>ROSCA</td>
+                <td class="text-center">3</td>
+                <td class="text-center">15</td>
+              </tr>
+              <tr><td class="text-center">3</td>
+                <td>AGACHAMENTO</td>
+                <td class="text-center">3</td>
+                <td class="text-center">15</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <div class="modal-footer d-flex justify-content-center primary">
+        <button class="btn btn-default btn-success" type="submit" value="Logar" onclick="window.print()">Imprimir</button>
+        <button class="btn btn-default btn-danger" data-dismiss="modal">Cancelar</button>
+      </div> 
+    </div>    
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 <!-- JavaScript (Opcional) -->
 <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
