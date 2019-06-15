@@ -28,6 +28,7 @@
 
                 if(nome == "aluno"){
                   window.location.replace("aluno.html");
+                  alert('Voce foi autenticado como ALUNO');
                   return true;
                 }
                 
@@ -35,7 +36,7 @@
             }
         </script>
 </head>
-<body>
+<body class="smart-body">
   <div class="container" >
     <a class="links" id="paralogin"></a>
     <a class="links" id="paracadastro"></a>
@@ -45,12 +46,12 @@
         <form method="post" action="" name="formuser"> 
           <h1>Login</h1> 
           <p> 
-            <label for="nome_login">Seu nome</label>
+            <label for="nome_login" style="color: black;">Seu nome</label>
             <input id="nome_login" name="nome" required="required" type="text" placeholder="ex. fulano123silva"/>
           </p>
            
           <p> 
-            <label for="email_login">Sua Senha</label>
+            <label for="email_login" style="color: black;">Sua Senha</label>
             <input id="email_login" name="senha" required="required" type="password" placeholder="ex. 12345" /> 
           </p>
            
@@ -60,12 +61,12 @@
           </p>
            
           <p> 
-            <input type="submit" value="Logar" onclick="return validar()"/> 
+            <input type="submit" value="Logar" onclick="return validar()" style="color: #DBA901; background-color: black;" /> 
           </p>
            
           <p class="link">
             Ainda nao tem conta?
-            <a href="#paracadastro">Cadastre-se</a>
+            <a href="#paracadastro"  style="color: #DBA901; background-color: black;">Cadastre-se</a>
           </p>
         </form>
       </div>

@@ -8,12 +8,17 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
-  <title>GERENTE</title>
+<title>ALUNO</title>
 </head>
-<body>
+<body style=" 
+    background-image: url('fundo-admin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+">
 
   <!--BARRA SUPERIOR-->
   <div>
@@ -27,7 +32,7 @@
     <div class="pos-f-t">
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
-          <a class="dropdown-item" href="index.html" style="text-align: right">Sair</a>
+          <a class="dropdown-item" data-target="#modalExemplo" data-toggle="modal" href="#modalExemplo" style="text-align: right">Sair</a>
         </div>
       </div>
     </div>
@@ -35,27 +40,236 @@
 
   <!--BOAS VINDAS-->
   <div>
-    <h1 align="center">BEM VINDO A SMARTFIT ACADEMIA</h1>  
+    <h1 align="center" style="padding-top: 1%;">BEM VINDO A SMARTFIT ACADEMIA</h1>  
   </div>
 
-  <!--BUSCA-->
-  <div >
-    <form class="form-inline col-xs-6" style="padding-top: 15%; padding-left: 20%">
-      <input class="form-control form-control-lg" type="text" placeholder="Pesquisar" style="width: 60%">
-      <button class="btn btn-outline-success form-control-lg" type="submit">Pesquisar</button>
-    </form>
-  </div>
 
   <div>
-    
+    <div style="margin-top: 15%;">
+      <table>
+        <tr>
+          <td>
+            <!--CADASTRO EQUIPAMENTO-->
+            <div  style="margin-left: 135%;">
+              <a class="button" href="#">
+               <span><img src="vertreino.png"></span>
+             </a>
+           </div>
+         </td>
+
+       <!--CADASTRO PACOTE-->
+       <td>
+        <div style="margin-left: 480%;">
+         <a class="button" href="#">
+           <span><img src="alterardados.png"></span>
+         </a>
+       </div>
+     </td>  
+
+   <!--CADASTRO PAGAMENTO-->
+   <td>
+    <div style="margin-left: 901%;">
+      <a class="button" href="#">
+       <span><img src="novopacote.png"></span>
+     </a>
+   </div>
+ </td>  
+
+
+ <form method="post" action="" name="formuser">
+   <!-- MODAL -->
+   <div id="myModal" class="modal" style="padding-top:4%; padding-right: 10%; padding-left: 10%;">
+    <!-- CONTEUDO MODAL -->
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">ADIÇAO DE ALUNO</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--CORPO MODAL-->
+      <div class="modal-body mx-3">
+
+        <!--CAMPOS-->
+        <div class="row">
+          <div class="col-md-3">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Foto do Aluno</label>
+            <label style="color : red;">*</label>
+            <img src="" height="200">
+            <input type="file" onchange="previewFile()" class="form-control validate" style="height: 40px; width: 160px;" required name="foto">          
+          </div>
+          <div class="col-md-2">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Matricula</label>
+            <br>
+            <br>
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Nome</label>
+            <label style="color : red;">*</label>
+            <br>
+            <br>
+            <label data-error="wrong" data-success="right" for="defaultForm-email">CPF</label>
+            <label style="color : red;">*</label>
+          </div>
+          <div class="col-md-7">
+            <input type="text" id="matricula" class="form-control validate" value="0">
+            <br>
+            <input type="text" id="nome" class="form-control validate" placeholder="José da Silva Araujo"  required name="nome">
+            <br>
+            <input type="text" name="cpf" onkeypress="mascara(this, '###.###.###-##')" placeholder="000.000.000-00" maxlength="14"  required name="cpf">
+          </div>
+        </div>
+        <br>
+
+        <div class=row>
+          <div class="col-md-3">
+            <label data-error="wrong" data-success="right" for="defaultForm-pass">Data de Nascimento</label>
+            <label style="color : red;">*</label>
+          </div>
+          <div class="col-md-9">
+            <input type="date" id="defaultForm-pass" class="form-control validate"  required name="nascimento">
+          </div>
+        </div>
+
+        <div>
+          <i class="fas fa-lock prefix grey-text"></i>
+          <label> Sexo</label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" checked>Feminino
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio">Masculino
+          </label>    
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Celular</label>
+            <label style="color : red;">*</label>
+            <input type="text" name="celular" onkeypress="mascara(this, '## # ####-####')" placeholder="00 0 0000-0000" maxlength="16"  required name="celular">
+          </div>
+          <div class="col-md-6">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Telefone</label>
+            <input type="text" name="telefone" onkeypress="mascara(this, '## ####-####')" maxlength="12" placeholder="00 0000-0000">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <i class="fas fa-lock prefix grey-text"></i>
+            <label data-error="wrong" data-success="right" for="defaultForm-pass">Bairro</label>
+            <label style="color : red;">*</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="defaultForm-pass" class="form-control validate" required name="bairro">
+          </div>
+        </div>
+
+        <br>
+        
+        <div class="row">
+          <div class="col-md-1">
+            <label data-error="wrong" data-success="right" for="defaultForm-email">Rua</label>
+            <label style="color : red;">*</label>
+          </div>
+          <div class="col-md-7">
+           <input type="text" id="defaultForm-email" class="form-control validate" required name="rua">
+         </div>
+         <div class="col-md-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Numero</label>
+          <label style="color : red;">*</label>
+        </div>
+        <div class="col-md-2">
+          <input type="number" id="defaultForm-email" class="form-control validate" required name="numero">
+        </div>
+      </div>
+      <br>
+      <div>
+        <i class="fas fa-lock prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">CEP</label>
+        <label style="color : red;">*</label>
+        <input type="text" name="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" placeholder="00000-000" required name="cep"> 
+      </div>
+
+      <div>
+        <i class="fas fa-lock prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">Email</label>
+        <label style="color : red;">*</label>
+        <input type="email" id="defaultForm-pass" class="form-control validate" placeholder="seuemail@provedor.com" name="email">
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label>Modalidade 1</label>
+          <select name="cars">
+            <option value="volvo">Musculação</option>
+            <option value="saab">Natação</option>
+            <option value="fiat">Aeróbica</option>
+            ]<option value="fiat">Funcional</option>
+          </select>  
+        </div>
+        <div class="col-md-6">
+          <label>Modalidade 2</label>
+          <select name="cars">
+            <option value="volvo">Taekwondo</option>
+            <option value="saab">Jiu-Jitsu</option>
+            <option value="fiat">Boxe Chinês</option>
+            <option value="fiat">Muay Thay</option>
+          </select>   
+        </div>
+      </div>
+
+      <div class="row">
+        <i class="fas fa-lock prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="defaultForm-pass" class="col-md-3">Melhor Dia Pagamento</label>
+        <select name="cars" class="col-md-9">
+          <option value="volvo">Dia 5</option>
+          <option value="saab">Dia 10</option>
+          <option value="fiat">Dia 15</option>
+        </select> 
+      </div>
+
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center primary">
+      <button class="btn btn-default btn-success" type="submit" value="Logar" onclick="return validar()">Confirmar</button>
+      <button class="btn btn-default btn-danger" data-dismiss="modal">Cancelar</button>
+    </div>
   </div>
+</div>
+</form>
 
+<!-- CONFIRMAÇÃO DE OPERAÇÃO-->
 
-  
-  <!-- JavaScript (Opcional) -->
-  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Finalizar Seção?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer" style="align-self: center;">
+        <button type="button" data-dismiss="modal" class="button btn-success">Ficar</button>
+        <a href="index.html"><button class="btn btn-danger"  href="index.html">Sair</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</tr>
+</table>
+</div>
+</div>
+
+<!-- JavaScript (Opcional) -->
+<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

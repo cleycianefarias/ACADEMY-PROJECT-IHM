@@ -28,7 +28,7 @@ a.links{
 /* formatando o cabeçalho dos formulários */
 h1{
   font-size: 48px;
-  color: #066a75;
+  color: #DBA901;
   padding: 10px 0;
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -52,7 +52,7 @@ p:first-child{
   margin: 0px;
 }
 label{
-  color: #405c60;
+  color: #DBA901;
   position: relative;
 }
 
@@ -238,7 +238,19 @@ input[type=file] {
 }
 
 .smart-body{
-  background-color: #D7DF01;
+  background-image: url("fundo.jpg");
+  background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    background-size: cover;
 }
 
 .required:after {
